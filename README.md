@@ -2,6 +2,9 @@
 High-Dimensional Gene Expression and Morphology Profiles of Cells across 28,000 Genetic and Chemical Perturbations
 
 # Data Modalities:
+<details>
+<summary>Click to expand</summary>
+  
 ### Gene expression (GE) profiles
 Each cell has DNA in the nucleus which is transcribed into various mRNA molecules which are then translated into proteins that carry out functions in the cell. The levels of mRNA in the cell are often biologically meaningful - collectively, mRNA levels for a cell are known as its transcriptional state; each individual mRNA level is referred to as the corresponding gene's "expression".
 The L1000 assay \cite{subramanian2017next} was used to measure the transcriptional state of cells in the datasets here. The assay reports a sample's mRNA levels for 978 genes at high-throughput, from the bulk population of cells treated with a given perturbation. These 978 "landmark" genes capture approximately $80\%$ of the transcriptional variance for the entire genome \cite{subramanian2017next}. The data processing tools and workflows to produce these profiles are available at https://clue.io/.
@@ -12,6 +15,8 @@ We used the Cell Painting assay \cite{bray2016cell} to measure the morphological
 Images are then processed using CellProfiler \hyperlink{https://cellprofiler.org/}{software} \cite{mcquin2018cellprofiler} to extract thousands of features of each cell’s morphology and form a high-dimensional profile for each single cell.  These features are based on various shape, intensity and texture statistics and are then aggregated for all the single cells in a "well" (a miniature test tube) that are called replicate-level profiles of perturbations. 
 Aggregation of replicate-level profiles across all the wells or replicates of a perturbation is called a treatment-level profile. In our study, we used treatment-level profiles in all experiments but have provided replicate-level profiles for researchers interested in further data exploration. 
 
+</details>
+  
 # Public Datasets (Preprocessed Profiles)
 Preprocessed profiles are available on a S3 bucket. They can be downloaded using the command:
 
