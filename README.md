@@ -23,13 +23,11 @@ Preprocessed profiles are available on a S3 bucket. They can be downloaded using
 ```bash
 aws s3 cp \
   --recursive \
-  s3://cellpainting-datasets/Rosetta-GE-CP . --request-payer 
+  s3://cellpainting-datasets/Rosetta-GE-CP .  
 ```
 
 See this [wiki](https://github.com/carpenterlab/2016_bray_natprot/wiki/What-do-Cell-Painting-features-mean%3F) for sample Cell Painting images and the meaning of ([CellProfiler](https://cellprofiler.org/)-derived) Cell Painting features. 
-<!-- 
-The `--request-payer` option means that your AWS account will be charged for downloading the image data; read more [here](https://docs.aws.amazon.com/AmazonS3/latest/userguide/RequesterPaysBuckets.html). We plan to make the dataset available on [IDR](https://idr.openmicroscopy.org/) at which point it can be accessed and downloaded for free. Note that the image-based profiles are available in this repository (see below) and can be freely downloaded. 
- -->
+
 #### CP Profile descriptions:
 We gathered four available data sets that had both Cell Painting morphological (CP) and L1000 gene expression (GE) profiles, preprocessed the data from different sources and in different formats in a unified .csv format, and made the data publicly available. Single cell morphological (CP) profiles were created using CellProfiler software and processed to form aggregated replicate and treatment levels using the R cytominer package [cytominer](https://github.com/cytomining/cytominer/blob/master/vignettes/cytominer-pipeline.Rmd). 
 We made the following three types of profiles available:
