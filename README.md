@@ -41,17 +41,17 @@ aws s3 cp \
 
 See this [wiki](https://github.com/carpenterlab/2016_bray_natprot/wiki/What-do-Cell-Painting-features-mean%3F) for sample Cell Painting images and the meaning of ([CellProfiler](https://cellprofiler.org/)-derived) Cell Painting features. 
 
-#### CP Profile descriptions:
+#### CP-L1000 Profile descriptions:
 We gathered four available data sets that had both Cell Painting morphological (CP) and L1000 gene expression (GE) profiles, preprocessed the data from different sources and in different formats in a unified .csv format, and made the data publicly available. Single cell morphological (CP) profiles were created using CellProfiler software and processed to form aggregated replicate and treatment levels using the R cytominer package [cytominer](https://github.com/cytomining/cytominer/blob/master/vignettes/cytominer-pipeline.Rmd). 
 We made the following three types of profiles available for cell-painting modality of each of four datasets:
 
 
-| File name                                                  | Description                                              |
-| ---------------------------------------------------------- | -------------------------------------------------------- |
-| `replicate_level_cp_augmented.csv`                                 | Aggregated and Metadata annotated profiles which are the average of single cell profiles in each well.              |
-| `replicate_level_cp_normalized.csv.gz`                             | Normalized profiles which are the z-scored aggregated profiles, where the scores are computing using the distribution of negative controls as the reference.                  |
-| `replicate_level_cp_normalized_variable_selected.csv.gz`        | Normalized variable selected which are normalized profiles with features selection applied      |
-
+| Folder  | File name                                                  | Description                                              |
+| -------     | ---------------------------------------------------------- | -------------------------------------------------------- |
+|CellPainting| `replicate_level_cp_augmented.csv`                                 | Aggregated and Metadata annotated profiles which are the average of single cell profiles in each well.              |
+|CellPainting| `replicate_level_cp_normalized.csv.gz`                             | Normalized profiles which are the z-scored aggregated profiles, where the scores are computing using the distribution of negative controls as the reference.                  |
+|CellPainting| `replicate_level_cp_normalized_variable_selected.csv.gz`        | Normalized variable selected which are normalized profiles with features selection applied      |
+|L1000| `replicate_level_l1k.csv`                                 | Aggregated and Metadata annotated profiles which are the average of single cell profiles in each well.      
 # Running the analysis script notebooks
 
 # License
