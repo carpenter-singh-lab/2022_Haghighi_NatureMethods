@@ -33,11 +33,12 @@ Aggregation of replicate-level profiles across all the wells or replicates of a 
 <details>
 <summary>Click to expand</summary>
   
-- CDRP-BBBC047-Bray-CP - GE \cite{subramanian2017next}
-- CDRP-bio-BBBC036-Bray-CP \cite{bray2017dataset} - GE \cite{subramanian2017next}
-- LUAD-BBBC041-Caicedo-CP \cite{luadURLCP} - GE \cite{berger2016high}
-- TA-ORF-BBBC037-Rohban-CP \cite{rohban2017systematic} - GE \cite{rohban2017systematic}
-
+- CDRP-BBBC047-Bray-[CP](https://pubmed.ncbi.nlm.nih.gov/28327978/) - [GE](https://pubmed.ncbi.nlm.nih.gov/29195078/)
+- CDRP-bio-BBBC036-Bray-[CP](https://pubmed.ncbi.nlm.nih.gov/28327978/) - [GE](https://pubmed.ncbi.nlm.nih.gov/29195078/)
+- LUAD-BBBC041-Caicedo-[CP](https://registry.opendata.aws/cell-painting-image-collection/) - [GE](https://pubmed.ncbi.nlm.nih.gov/27478040/)
+- TA-ORF-BBBC037-Rohban-[CP](https://elifesciences.org/articles/24060) - [GE](https://elifesciences.org/articles/24060)
+- LINCS-Pilot1-[CP](https://zenodo.org/record/3928744#.YNu3WzZKheV) - [GE](https://clue.io/)
+  
 </details>
 
 
