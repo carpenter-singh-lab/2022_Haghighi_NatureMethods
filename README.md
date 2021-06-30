@@ -29,6 +29,17 @@ Aggregation of replicate-level profiles across all the wells or replicates of a 
     - TA-ORF-BBBC037-Rohban-CP-GE (Cell line: U2OS)
     - LINCS-Pilot1-CP-GE (Cell line: A549)
 
+# References to raw profiles and images:
+<details>
+<summary>Click to expand</summary>
+  
+- CDRP-BBBC047-Bray-CP - GE \cite{subramanian2017next}
+- CDRP-bio-BBBC036-Bray-CP \cite{bray2017dataset} - GE \cite{subramanian2017next}
+- LUAD-BBBC041-Caicedo-CP \cite{luadURLCP} - GE \cite{berger2016high}
+- TA-ORF-BBBC037-Rohban-CP \cite{rohban2017systematic} - GE \cite{rohban2017systematic}
+
+</details>
+
 
 ## Preprocessed publicly available Profiles
 Preprocessed profiles are available on a S3 bucket. They can be downloaded using the command:
