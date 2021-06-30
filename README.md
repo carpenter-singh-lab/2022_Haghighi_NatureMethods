@@ -29,7 +29,7 @@ Aggregation of replicate-level profiles across all the wells or replicates of a 
     - TA-ORF-BBBC037-Rohban-CP-GE (Cell line: U2OS)
     - LINCS-Pilot1-CP-GE (Cell line: A549)
 
-# References to raw profiles and images:
+## References to raw profiles and images:
 <details>
 <summary>Click to expand</summary>
   
