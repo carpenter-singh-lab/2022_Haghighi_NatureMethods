@@ -64,7 +64,7 @@ We made the following three types of profiles available for cell-painting modali
 |CellPainting| `replicate_level_cp_normalized.csv.gz`                             | Normalized profiles which are the z-scored aggregated profiles, where the scores are computing using the distribution of negative controls as the reference.                  |
 |CellPainting| `replicate_level_cp_normalized_variable_selected.csv.gz`        | Normalized variable selected which are normalized profiles with features selection applied      |
 |L1000| `replicate_level_l1k.csv`                                 | Aggregated and Metadata annotated profiles which are the average of single cell profiles in each well.      
-# Running the analysis script notebooks
+<!-- # Running the analysis script notebooks -->
 
 # License
 We license the data, results, and figures as [CC0 1.0](LICENSE_CC0.md) and the source code as BSD 3-Clause.
