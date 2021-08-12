@@ -7,7 +7,7 @@ from sklearn.metrics import pairwise_distances
 from utils.normalize_funcs import standardize_per_catX
 
 # def readMergedProfiles(dataset,profileType,nRep):
-def readMergedProfiles(dataset_rootDir,dataset,profileType,profileLevel,nRep,highRepOverlapEnabled):
+def readMergedProfiles(dataset_rootDir,dataset,profileType,profileLevel,nRep,filter_perts):
 
     #'dataset_name',['folder_name',[cp_pert_col_name,l1k_pert_col_name],[cp_control_val,l1k_control_val]]
     ds_info_dict={'CDRP':['CDRP-BBBC047-Bray',['Metadata_Sample_Dose','pert_sample_dose'],[['DMSO'],['DMSO']]],
@@ -89,10 +89,17 @@ def readMergedProfiles(dataset_rootDir,dataset,profileType,profileLevel,nRep,hig
     
 
     ###### remove perts with low rep corr
-    if highRepOverlapEnabled:
-        highRepPerts = highRepFinder(dataset) + ['DMSO'];
+    if filter_perts=='highRepOverlap':    
+        highRepPerts = highRepFinder(dataset,'intersection') + ['DMSO'];
+        
         cp_data_repLevel=cp_data_repLevel[cp_data_repLevel['PERT'].isin(highRepPerts)].reset_index()
-        l1k_data_repLevel=l1k_data_repLevel[l1k_data_repLevel['PERT'].isin(highRepPerts)].reset_index()        
+        l1k_data_repLevel=l1k_data_repLevel[l1k_data_repLevel['PERT'].isin(highRepPerts)].reset_index()  
+        
+    elif filter_perts=='highRepUnion':
+        highRepPerts = highRepFinder(dataset,'union') + ['DMSO'];
+        
+        cp_data_repLevel=cp_data_repLevel[cp_data_repLevel['PERT'].isin(highRepPerts)].reset_index()
+        l1k_data_repLevel=l1k_data_repLevel[l1k_data_repLevel['PERT'].isin(highRepPerts)].reset_index()      
     
     ####### form treatment level profiles
     l1k_data_treatLevel=l1k_data_repLevel.groupby(labelCol)[l1k_features].mean().reset_index();
@@ -150,7 +157,8 @@ def readMergedProfiles(dataset_rootDir,dataset,profileType,profileLevel,nRep,hig
 
 
 
-def highRepFinder(dataset):
+def highRepFinder(dataset,how):
+    
     repCorDF=pd.read_excel('./results/RepCor/RepCorrDF.xlsx', sheet_name=None)
     cpRepDF=repCorDF['cp-'+dataset.lower()]
     cpHighList=cpRepDF[cpRepDF['RepCor']>cpRepDF['Rand90Perc']]['Unnamed: 0'].tolist()
@@ -158,8 +166,15 @@ def highRepFinder(dataset):
     cpRepDF=repCorDF['l1k-'+dataset.lower()]
     l1kHighList=cpRepDF[cpRepDF['RepCor']>cpRepDF['Rand90Perc']]['Unnamed: 0'].tolist()
 #     print("l1kHighList",l1kHighList)
-#     print("cpHighList",cpHighList)    
-    highRepPerts=list(set(l1kHighList) & set(cpHighList))
-    print('l1k: from ',cpRepDF.shape[0],' to ',len(l1kHighList))
-    print('CP and l1k high rep overlap: ',len(highRepPerts))
+#     print("cpHighList",cpHighList)   
+    if how=='intersection':
+        highRepPerts=list(set(l1kHighList) & set(cpHighList))
+        print('l1k: from ',cpRepDF.shape[0],' to ',len(l1kHighList))
+        print('CP and l1k high rep overlap: ',len(highRepPerts))
+        
+    elif how=='union':
+        highRepPerts=list(set(l1kHighList) | set(cpHighList))
+        print('l1k: from ',cpRepDF.shape[0],' to ',len(l1kHighList))
+        print('CP and l1k high rep union: ',len(highRepPerts))        
+        
     return highRepPerts
