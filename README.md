@@ -66,5 +66,16 @@ We made the following three types of profiles available for cell-painting modali
 |L1000| `replicate_level_l1k.csv`                                 | Aggregated and Metadata annotated profiles which are the average of single cell profiles in each well.      
 <!-- # Running the analysis script notebooks -->
 
+
+
+# Lookup table for L1000 genes predictability:
+<details>
+<summary>Click to expand</summary>
+  
+### Gene expression (GE) profiles
+
+</details>
+
+
 # License
 We license the data, results, and figures as [CC0 1.0](LICENSE_CC0.md) and the source code as BSD 3-Clause.
