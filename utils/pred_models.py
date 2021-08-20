@@ -33,7 +33,7 @@ def lasso_cv(X,y,k,group_labels):
     return scores, scores_rand
 
 
-def lasso_cv_plus_model_selection(X0,y0,k,group_labels):
+def lasso_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
     #####
     ## X: CP data [perts/samples, features]
     ## y: lm gene expression value [perts/samples, 1 (feature value)]
@@ -71,7 +71,10 @@ def lasso_cv_plus_model_selection(X0,y0,k,group_labels):
     
     # Perform k-fold cross validation on the shuffled vector of lm GE across samples
     # y.sample(frac = 1) this just shuffles the vector
-    scores_rand = cross_val_score(clf, X0, y0.sample(frac = 1) ,groups=group_labels,cv=split_obj,n_jobs=n_j)
+    if rand_added_flag:
+        scores_rand = cross_val_score(clf, X0, y0.sample(frac = 1) ,groups=group_labels,cv=split_obj,n_jobs=n_j)
+    else:
+        scores_rand =0
     return np.array(scores), scores_rand
 
 
@@ -93,7 +96,7 @@ def lasso_cv_plus_model_selection(X0,y0,k,group_labels):
 #     return scores, scores_rand
  # X is train samples and y is the corresponding labels
 
-def MLP_cv(X,y,k,group_labels):
+def MLP_cv(X,y,k,group_labels,rand_added_flag):
     from sklearn.neural_network import MLPRegressor
 
     n_j=-1
@@ -108,11 +111,16 @@ def MLP_cv(X,y,k,group_labels):
     
     # Perform k-fold cross validation on the shuffled vector of lm GE across samples
     # y.sample(frac = 1) this just shuffles the vector
-    scores_rand = cross_val_score(regr, X, y.sample(frac = 1) ,groups=group_labels,cv=split_obj,n_jobs=n_j)
+    
+    if rand_added_flag:
+        scores_rand = cross_val_score(regr, X, y.sample(frac = 1) ,groups=group_labels,cv=split_obj,n_jobs=n_j)
+    else:
+        scores_rand =0    
+    
     return scores, scores_rand
 
 
-def MLP_cv_plus_model_selection(X0,y0,k,group_labels):
+def MLP_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
     from sklearn.neural_network import MLPRegressor
 
     n_j=-1
@@ -160,8 +168,13 @@ def MLP_cv_plus_model_selection(X0,y0,k,group_labels):
     
     # Perform k-fold cross validation on the shuffled vector of lm GE across samples
     # y.sample(frac = 1) this just shuffles the vector
-    scores_rand = cross_val_score(mlp_gs, X, y0.sample(frac = 1) ,groups=group_labels,cv=split_obj,n_jobs=n_j)
+    
 #     scores_rand=0
+
+    if rand_added_flag:
+        scores_rand = cross_val_score(mlp_gs, X, y0.sample(frac = 1) ,groups=group_labels,cv=split_obj,n_jobs=n_j)
+    else:
+        scores_rand =0    
     return scores, scores_rand
 
 
@@ -192,7 +205,7 @@ def MLP_cv_plus_model_selection(X0,y0,k,group_labels):
 
 
 
-def RFR_cv_plus_model_selection(X0,y0,k,group_labels):
+def RFR_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
     from sklearn.ensemble import RandomForestRegressor
     from sklearn.model_selection import GridSearchCV
     n_j=-1
