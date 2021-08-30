@@ -71,7 +71,8 @@ We made the following three types of profiles available for cell-painting modali
 # Lookup table for L1000 genes predictability:
 <details>
 <summary>Click to expand</summary>
-Cant copy it here! The page gets unresponsive.
+  
+[Table](https://github.com/carpenterlab/2021_Haghighi_submitted/blob/main/results/SingleGenePred/Appendix_D.csv)
 
 </details>
 
