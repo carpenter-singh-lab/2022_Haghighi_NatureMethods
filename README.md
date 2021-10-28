@@ -2,7 +2,7 @@
 # High-Dimensional Gene Expression and Morphology Profiles of Cells across 28,000 Genetic and Chemical Perturbations
 Populations of cells can be perturbed by various chemical and genetic treatments and the impact on the cells’ gene expression (transcription, i.e. mRNA levels) and morphology (in an image-based assay) can be measured in high dimensions. The patterns observed in this data can be used for more than a dozen applications in drug discovery and basic biology research. We provide a collection of four datasets where both gene expression and morphological data are available; roughly a thousand features are measured for each data type, across more than 28,000 thousand chemical and genetic perturbations. We have defined a set of biological problems that can be investigated using these two data modalities and provided baseline analysis and evaluation metrics for addressing each. This data resource is available at s3 bucket s3://cellpainting-datasets/Rosetta-GE-CP.
 
- [Link to Paper:](https://www.biorxiv.org/content/10.1101/2021.09.08.459417v1)
+ [Link to Paper](https://www.biorxiv.org/content/10.1101/2021.09.08.459417v1)
 
 
 # Data Modalities:
