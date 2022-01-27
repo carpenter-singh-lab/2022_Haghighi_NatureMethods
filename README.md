@@ -45,7 +45,7 @@ Aggregation of replicate-level profiles across all the wells or replicates of a 
 
 
 ## Preprocessed publicly available Profiles
-Preprocessed profiles (~9.5GB) are available on a S3 bucket. They can be downloaded using the command:
+Preprocessed profiles (~9.5GB) are available on a S3 bucket. They can be downloaded at no cost and no need for registration of any sort, using the command:
 
 ```bash
 aws s3 cp \
