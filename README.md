@@ -66,6 +66,33 @@ We made the following three types of profiles available for cell-painting modali
 |CellPainting| `replicate_level_cp_normalized.csv.gz`                             | Normalized profiles which are the z-scored aggregated profiles, where the scores are computing using the distribution of negative controls as the reference.                  |
 |CellPainting| `replicate_level_cp_normalized_variable_selected.csv.gz`        | Normalized variable selected which are normalized profiles with features selection applied      |
 |L1000| `replicate_level_l1k.csv`                                 | Aggregated and Metadata annotated profiles which are the average of single cell profiles in each well.      
+
+
+
+
+
+### Available functional annotation for each dataset:
+
+| Dataset  | Functional Annotations                                                | Corresponding Metadata Column                                              |
+| -------  | ---------------------------------------------------------- | -------------------------------------------------------- |
+| CDRP |               MoA                  |      `Metadata_moa`,`Metadata_target`             | 
+|CDRP-BIO|             MoA                  |     `Metadata_moa`,`Metadata_target`              |
+|LUAD|                   |     |
+|TA-ORF|                   |     |
+|LINCS|   MoA    | `Metadata_moa` |      
+
+
+### Number of features for each dataset:
+
+| Dataset  | GE                                                | CP<br/>`normalized`       | CP<br/>`normalized_variable_selected`  |
+| -------  | ------------------------------------------------- | ------------------------- | -------------------------------------- |
+| CDRP     |               977                                 |      x                    |                                        |
+|CDRP-BIO  |               977                                 |      x                    |              601                       |
+|LUAD      |               978                                 |      x                    |              291                       |
+|TA-ORF    |               978                                 |      x                    |               63                       |
+|LINCS     |               978                                 |      x                    |               119                      | 
+
+
 <!-- # Running the analysis script notebooks -->
 
 
