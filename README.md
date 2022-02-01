@@ -87,10 +87,10 @@ We made the following three types of profiles available for cell-painting modali
 | Dataset  | GE                                                | CP<br/>`normalized`       | CP<br/>`normalized_variable_selected`  |
 | -------  | ------------------------------------------------- | ------------------------- | -------------------------------------- |
 | CDRP     |               977                                 |      x                    |                                        |
-|CDRP-BIO  |               977                                 |      x                    |              601                       |
-|LUAD      |               978                                 |      x                    |              291                       |
-|TA-ORF    |               978                                 |      x                    |               63                       |
-|LINCS     |               978                                 |      x                    |               119                      | 
+|CDRP-BIO  |               977                                 |      1570                 |              601                       |
+|LUAD      |               978                                 |      1569                 |              291                       |
+|TA-ORF    |               978                                 |      1677                 |               63                       |
+|LINCS     |               978                                 |      1670                 |               119                      | 
 
 
 <!-- # Running the analysis script notebooks -->
