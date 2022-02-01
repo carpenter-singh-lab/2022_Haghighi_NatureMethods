@@ -8,7 +8,11 @@ from sklearn.model_selection import cross_val_score, cross_val_predict, GroupKFo
 from sklearn import metrics
 import numpy as np
 from sklearn import preprocessing
-
+from warnings import simplefilter
+from sklearn.exceptions import ConvergenceWarning
+# simplefilter("ignore", category=ConvergenceWarning)
+# from sklearn.exceptions import ConvergenceWarning
+ConvergenceWarning('ignore')
 
 def lasso_cv(X,y,k,group_labels):
     #####
