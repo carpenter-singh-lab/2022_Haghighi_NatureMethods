@@ -2,6 +2,8 @@
 # High-Dimensional Gene Expression and Morphology Profiles of Cells across 28,000 Genetic and Chemical Perturbations
 Populations of cells can be perturbed by various chemical and genetic treatments and the impact on the cells’ gene expression (transcription, i.e. mRNA levels) and morphology (in an image-based assay) can be measured in high dimensions. The patterns observed in this data can be used for more than a dozen applications in drug discovery and basic biology research. We provide a collection of four datasets where both gene expression and morphological data are available; roughly a thousand features are measured for each data type, across more than 28,000 thousand chemical and genetic perturbations. We have defined a set of biological problems that can be investigated using these two data modalities and provided baseline analysis and evaluation metrics for addressing each. This data resource is available at s3 bucket s3://cellpainting-datasets/Rosetta-GE-CP.
 
+ [Link to Paper](https://www.biorxiv.org/content/10.1101/2021.09.08.459417v1)
+
 
 # Data Modalities:
 <details>
@@ -43,7 +45,7 @@ Aggregation of replicate-level profiles across all the wells or replicates of a 
 
 
 ## Preprocessed publicly available Profiles
-Preprocessed profiles are available on a S3 bucket. They can be downloaded using the command:
+Preprocessed profiles (~9.5GB) are available on a S3 bucket. They can be downloaded at no cost and no need for registration of any sort, using the command:
 
 ```bash
 aws s3 cp \
@@ -64,6 +66,33 @@ We made the following three types of profiles available for cell-painting modali
 |CellPainting| `replicate_level_cp_normalized.csv.gz`                             | Normalized profiles which are the z-scored aggregated profiles, where the scores are computing using the distribution of negative controls as the reference.                  |
 |CellPainting| `replicate_level_cp_normalized_variable_selected.csv.gz`        | Normalized variable selected which are normalized profiles with features selection applied      |
 |L1000| `replicate_level_l1k.csv`                                 | Aggregated and Metadata annotated profiles which are the average of single cell profiles in each well.      
+
+
+
+
+
+### Available functional annotation for each dataset:
+
+| Dataset  | Functional Annotations                                                | Corresponding Metadata Column                                              |
+| -------  | ---------------------------------------------------------- | -------------------------------------------------------- |
+| CDRP |               MoA                  |      `Metadata_moa`,`Metadata_target`             | 
+|CDRP-BIO|             MoA                  |     `Metadata_moa`,`Metadata_target`              |
+|LUAD|                   |     |
+|TA-ORF|                   |     |
+|LINCS|   MoA    | `Metadata_moa` |      
+
+
+### Number of features for each dataset:
+
+| Dataset  | GE                                                | CP<br/>`normalized`       | CP<br/>`normalized_variable_selected`  |
+| -------  | ------------------------------------------------- | ------------------------- | -------------------------------------- |
+| CDRP     |               977                                 |      x                    |                                        |
+|CDRP-BIO  |               977                                 |      1570                 |              601                       |
+|LUAD      |               978                                 |      1569                 |              291                       |
+|TA-ORF    |               978                                 |      1677                 |               63                       |
+|LINCS     |               978                                 |      1670                 |               119                      | 
+
+
 <!-- # Running the analysis script notebooks -->
 
 
@@ -71,7 +100,8 @@ We made the following three types of profiles available for cell-painting modali
 # Lookup table for L1000 genes predictability:
 <details>
 <summary>Click to expand</summary>
-Cant copy it here! The page gets unresponsive.
+  
+[Table](https://github.com/carpenterlab/2021_Haghighi_submitted/blob/main/results/SingleGenePred/Appendix_D.csv)
 
 </details>
 
