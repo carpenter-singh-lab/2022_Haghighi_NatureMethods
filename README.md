@@ -38,8 +38,8 @@ Aggregation of replicate-level profiles across all the wells or replicates of a 
 - CDRP-BBBC047-Bray-[CP](https://pubmed.ncbi.nlm.nih.gov/28327978/) - [GE](https://pubmed.ncbi.nlm.nih.gov/29195078/)
 - CDRP-bio-BBBC036-Bray-[CP](https://pubmed.ncbi.nlm.nih.gov/28327978/) - [GE](https://pubmed.ncbi.nlm.nih.gov/29195078/)
 - LUAD-BBBC041-Caicedo-[CP](https://registry.opendata.aws/cell-painting-image-collection/) - [GE](https://pubmed.ncbi.nlm.nih.gov/27478040/)
-- TA-ORF-BBBC037-Rohban-[CP](https://elifesciences.org/articles/24060) - [GE]
-- LINCS-Pilot1-[CP](https://zenodo.org/record/3928744#.YNu3WzZKheV) - [GE](https://clue.io/)
+- TA-ORF-BBBC037-Rohban-[CP](https://elifesciences.org/articles/24060) - [GE](https://github.com/carpenterlab/2017_rohban_elife/tree/master/input/TA-OE-L1000-B1)
+- LINCS-Pilot1-[CP](https://zenodo.org/record/3928744#.YNu3WzZKheV) - [GE](https://figshare.com/articles/dataset/L1000_data_for_profiling_comparison/13181966)
   
 </details>
 
