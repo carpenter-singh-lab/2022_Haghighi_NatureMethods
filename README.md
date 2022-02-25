@@ -60,7 +60,7 @@ See this [wiki](https://github.com/carpenterlab/2016_bray_natprot/wiki/What-do-C
 The [Etags](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Object.html) of these files are listed below
 
 <details>
- <summary>Etag information</summary>
+ <summary>Etag information - Click to expand</summary>
  
 ```sh
 aws s3api list-objects --bucket cellpainting-gallery --prefix rosetta/broad/workspace/preprocessed_data/
