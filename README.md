@@ -48,9 +48,9 @@ Aggregation of replicate-level profiles across all the wells or replicates of a 
 Preprocessed profiles (~9.5GB) are available on a S3 bucket. They can be downloaded at no cost and no need for registration of any sort, using the command:
 
 ```bash
-aws s3 cp \
-  --recursive \
-  s3://cellpainting-datasets/Rosetta-GE-CP .  
+aws s3 sync \
+  --no-sign-request \
+  s3://cellpainting-gallery/rosetta/broad/workspace/preprocessed_data .
 ```
 
 See this [wiki](https://github.com/carpenterlab/2016_bray_natprot/wiki/What-do-Cell-Painting-features-mean%3F) for sample Cell Painting images and the meaning of ([CellProfiler](https://cellprofiler.org/)-derived) Cell Painting features. 
