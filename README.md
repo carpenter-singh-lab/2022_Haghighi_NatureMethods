@@ -55,7 +55,7 @@ aws s3 sync \
 
 #### Data version
 
-The [Etags] of these files are listed below
+The [Etags](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Object.html) of these files are listed below
 
 <details>
  <summary>Etag information</summary>
