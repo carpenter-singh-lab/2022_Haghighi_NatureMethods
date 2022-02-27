@@ -1,0 +1,43 @@
+---
+title: "Inspect metadata"
+output: html_notebook
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+metadata <-
+  list.files(
+    "../../preprocessed_data",
+    pattern = "replicate_level_cp_normalized_variable_selected.csv.gz",
+    recursive = TRUE,
+    full.names = TRUE
+  ) %>%
+  set_names(nm =
+              (basename(dirname(dirname(
+                .
+              ))) %>%
+                tools::file_path_sans_ext())) %>%
+  map_df(function(filename) {
+    read_csv(
+      filename,
+      col_select = matches("Metadata"),
+      col_types = cols(.default = col_character())
+    )
+  }, .id = "Metadata_dataset") 
+```
+
+
+```{r}
+metadata %>% arrow::write_parquet("output/cp_metadata.parquet")
+```
+
+```{r}
+metadata_summary <- 
+  metadata %>%
+  group_by(Metadata_dataset) %>%
+  skimr::skim()
+```
+
