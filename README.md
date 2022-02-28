@@ -55,6 +55,8 @@ aws s3 sync \
 
 See this [wiki](https://github.com/carpenterlab/2016_bray_natprot/wiki/What-do-Cell-Painting-features-mean%3F) for sample Cell Painting images and the meaning of ([CellProfiler](https://cellprofiler.org/)-derived) Cell Painting features. 
 
+- AWS CLI installation instructions can be found [here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
+
 #### Data version
 
 The [Etags](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Object.html) of these files are listed below
