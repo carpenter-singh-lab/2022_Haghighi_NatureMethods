@@ -457,6 +457,21 @@ We made the following three types of profiles available for cell-painting modali
 
 
 
+### Keywords to match tables across modalities for each dataset:
+
+| Dataset                  |  perturbation match column<br/>CP  | perturbation match column<br/>GE   | Control perturbation  <br/>CP| Control perturbation<br/>GE|
+|:----------------------|:-----------------|:-----------------------------|:--------------|:------------------|
+| CDRP-BBBC047-Bray     |  Metadata_Sample_Dose | pert_sample_dose | DMSO | DMSO           |
+| CDRPBIO-BBBC036-Bray  | Metadata_Sample_Dose | pert_sample_dose | DMSO | DMSO           |
+| TA-ORF-BBBC037-Rohban | Metadata_broad_sample | pert_id        | DMSO | DMSO           |
+| LUAD-BBBC041-Caicedo  |  x_mutation_status | allele             | DMSO_0.04| DMSO_-666 |
+| LINCS-Pilot1          | Metadata_pert_id_dose | pert_id_dose   | DMSO | DMSO           |
+
+
+
+
+
+
 ### Available functional annotation for each dataset:
 
 | Dataset  | Functional Annotations                                                | Corresponding Metadata Column                                              |
@@ -466,6 +481,9 @@ We made the following three types of profiles available for cell-painting modali
 |LUAD|                   |     |
 |TA-ORF|                   |     |
 |LINCS|   MoA    | `Metadata_moa` |      
+
+
+
 
 
 ### Number of features for each dataset:
