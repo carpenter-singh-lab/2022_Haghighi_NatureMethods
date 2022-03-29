@@ -4,8 +4,8 @@ import pandas as pd
 import sklearn.decomposition
 from sklearn import preprocessing
 from sklearn.metrics import pairwise_distances
-from utils.normalize_funcs import standardize_per_catX
-
+# from utils.normalize_funcs import standardize_per_catX
+from normalize_funcs import standardize_per_catX
 
 #'dataset_name',['folder_name',[cp_pert_col_name,l1k_pert_col_name],[cp_control_val,l1k_control_val]]
 ds_info_dict={'CDRP':['CDRP-BBBC047-Bray',['Metadata_Sample_Dose','pert_sample_dose']],
@@ -286,7 +286,7 @@ def highRepFinder(dataset,how):
     
     """
 
-    repCorDF=pd.read_excel('./results/RepCor/RepCorrDF.xlsx', sheet_name=None)
+    repCorDF=pd.read_excel('../results/RepCor/RepCorrDF.xlsx', sheet_name=None)
     cpRepDF=repCorDF['cp-'+dataset.lower()]
     cpHighList=cpRepDF[cpRepDF['RepCor']>cpRepDF['Rand90Perc']]['Unnamed: 0'].tolist()
     print('CP: from ',cpRepDF.shape[0],' to ',len(cpHighList))
@@ -372,7 +372,7 @@ def rename_affyprobe_to_genename(l1k_data_df,l1k_features):
     
     """
 
-    meta=pd.read_csv("./affy_probe_gene_mapping.txt",delimiter="\t",header=None, names=["probe_id", "gene"])
+    meta=pd.read_csv("../affy_probe_gene_mapping.txt",delimiter="\t",header=None, names=["probe_id", "gene"])
     meta_gene_probID=meta.set_index('probe_id')
     d = dict(zip(meta_gene_probID.index, meta_gene_probID['gene']))
     l1k_features_gn=[d[l] for l in l1k_features]

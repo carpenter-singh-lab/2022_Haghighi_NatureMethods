@@ -6,8 +6,10 @@ from warnings import simplefilter
 from sklearn.exceptions import ConvergenceWarning
 # simplefilter("ignore", category=ConvergenceWarning)
 # from sklearn.exceptions import ConvergenceWarning
-ConvergenceWarning('ignore')
+# ConvergenceWarning('ignore')
 
+
+########################## Lasso models
 def lasso_cv(X,y,k,group_labels):
     #####
     ## X: CP data [perts/samples, features]
@@ -51,7 +53,7 @@ def lasso_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
     alphas=np.concatenate((alphas1,alphas2))
 #     alphas = np.logspace(-4, -0.5, 30)
     lasso_cv = linear_model.LassoCV(alphas=alphas, random_state=0, max_iter=1000,selection='random')
-
+    
     X,y=X0.values,y0.values
     
 #     scores=np.zeros(k,)
@@ -63,7 +65,7 @@ def lasso_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
         
         lasso_cv.fit(X_train, y_train)  
         scores.append(lasso_cv.score(X_test, y_test))   
-        print(lasso_cv.alpha_)
+#         print(lasso_cv.alpha_)
     
     
     
@@ -74,6 +76,7 @@ def lasso_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
     else:
         scores_rand =0
     return np.array(scores), scores_rand
+
 
 def ridge_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
     #####
@@ -120,6 +123,7 @@ def ridge_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
         scores_rand =0
     return np.array(scores), scores_rand
 
+########################## MLP
 # def MLP_cv(X,y,k,group_labels):
 #     from sklearn.neural_network import MLPRegressor
 
@@ -162,6 +166,7 @@ def MLP_cv(X,y,k,group_labels,rand_added_flag):
     return scores, scores_rand
 
 
+
 def MLP_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
     from sklearn.neural_network import MLPRegressor
 
@@ -171,7 +176,7 @@ def MLP_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
 #     regr = MLPRegressor(hidden_layer_sizes = (50,10),activation='logistic',\
 #                         alpha=0.01,early_stopping=True)
 
-    mlp_gs = MLPRegressor(activation='logistic',max_iter=500)
+    mlp_gs = MLPRegressor(random_state=0,activation='logistic',max_iter=500)
 
     split_obj=GroupKFold(n_splits=k)    
     # Perform k-fold cross validation
@@ -210,7 +215,6 @@ def MLP_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
     
     # Perform k-fold cross validation on the shuffled vector of lm GE across samples
     # y.sample(frac = 1) this just shuffles the vector
-    
 #     scores_rand=0
 
     if rand_added_flag:
@@ -218,9 +222,6 @@ def MLP_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
     else:
         scores_rand =0    
     return scores, scores_rand
-
-
-
 
 # from sklearn.model_selection import RandomizedSearchCV
 # # Number of trees in random forest
@@ -246,7 +247,7 @@ def MLP_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
 # pprint(random_grid)
 
 
-
+########################## Random Forest
 def RFR_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
     from sklearn.ensemble import RandomForestRegressor
     from sklearn.model_selection import GridSearchCV
@@ -298,7 +299,7 @@ def RFR_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
 
 
 
-
+############################## Feature Ranking #########################
 def linear_model_feature_ranking(X0,y0,k,group_labels,l1k_features_gn):
     #####
     ## X: CP data [perts/samples, features]
@@ -334,7 +335,6 @@ def linear_model_feature_ranking(X0,y0,k,group_labels,l1k_features_gn):
     clf.fit(X, y)  
     return clf.coef_,fs.scores_
 #     return ranking(np.abs(lasso_cv.coef_), l1k_features_gn)
-
 
 
 ranks = {}
