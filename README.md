@@ -56,7 +56,7 @@ See this [wiki](https://github.com/carpenterlab/2016_bray_natprot/wiki/What-do-C
 
 - AWS CLI installation instructions can be found [here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
-#### Data version
+### Data version
 
 The [Etags](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Object.html) of these files are listed below
 
@@ -440,7 +440,7 @@ aws s3api list-objects --bucket cellpainting-gallery --prefix rosetta/broad/work
  </details>
  
 
-#### CP-L1000 Profile descriptions:
+### CP-L1000 Profile descriptions:
 We gathered four available data sets that had both Cell Painting morphological (CP) and L1000 gene expression (GE) profiles, preprocessed the data from different sources and in different formats in a unified .csv format, and made the data publicly available. Single cell morphological (CP) profiles were created using CellProfiler software and processed to form aggregated replicate and treatment levels using the R cytominer package [cytominer](https://github.com/cytomining/cytominer/blob/master/vignettes/cytominer-pipeline.Rmd). 
 We made the following three types of profiles available for cell-painting modality of each of four datasets:
 
