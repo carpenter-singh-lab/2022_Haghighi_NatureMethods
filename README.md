@@ -1,6 +1,5 @@
-<!-- #### 2021_Haghighi_NeurIPS_Dataset_submitted -->
 # High-Dimensional Gene Expression and Morphology Profiles of Cells across 28,000 Genetic and Chemical Perturbations
-Populations of cells can be perturbed by various chemical and genetic treatments and the impact on the cells’ gene expression (transcription, i.e. mRNA levels) and morphology (in an image-based assay) can be measured in high dimensions. The patterns observed in this data can be used for more than a dozen applications in drug discovery and basic biology research. We provide a collection of four datasets where both gene expression and morphological data are available; roughly a thousand features are measured for each data type, across more than 28,000 thousand chemical and genetic perturbations. We have defined a set of biological problems that can be investigated using these two data modalities and provided baseline analysis and evaluation metrics for addressing each. This data resource is available at s3 bucket s3://cellpainting-datasets/Rosetta-GE-CP.
+Populations of cells can be perturbed by various chemical and genetic treatments and the impact on the cells’ gene expression (transcription, i.e. mRNA levels) and morphology (in an image-based assay) can be measured in high dimensions. The patterns observed in this data can be used for more than a dozen applications in drug discovery and basic biology research. We provide a collection of four datasets where both gene expression and morphological data are available; roughly a thousand features are measured for each data type, across more than 28,000 thousand chemical and genetic perturbations. We have defined a set of biological problems that can be investigated using these two data modalities and provided baseline analysis and evaluation metrics for addressing each. 
 
  [Link to Paper](https://www.biorxiv.org/content/10.1101/2021.09.08.459417v1)
 
@@ -57,7 +56,7 @@ See this [wiki](https://github.com/carpenterlab/2016_bray_natprot/wiki/What-do-C
 
 - AWS CLI installation instructions can be found [here](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html).
 
-#### Data version
+### Data version
 
 The [Etags](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Object.html) of these files are listed below
 
@@ -441,7 +440,8 @@ aws s3api list-objects --bucket cellpainting-gallery --prefix rosetta/broad/work
  </details>
  
 
-#### CP-L1000 Profile descriptions:
+### CP-L1000 Profile descriptions
+
 We gathered four available data sets that had both Cell Painting morphological (CP) and L1000 gene expression (GE) profiles, preprocessed the data from different sources and in different formats in a unified .csv format, and made the data publicly available. Single cell morphological (CP) profiles were created using CellProfiler software and processed to form aggregated replicate and treatment levels using the R cytominer package [cytominer](https://github.com/cytomining/cytominer/blob/master/vignettes/cytominer-pipeline.Rmd). 
 We made the following three types of profiles available for cell-painting modality of each of four datasets:
 
@@ -455,9 +455,9 @@ We made the following three types of profiles available for cell-painting modali
 
 
 
+### Metadata information
 
-
-### Keywords to match tables across modalities for each dataset:
+#### Keywords to match tables across modalities for each dataset:
 
 | Dataset                  |  perturbation match column<br/>CP  | perturbation match column<br/>GE   | Control perturbation  <br/>CP| Control perturbation<br/>GE|
 |:----------------------|:-----------------|:-----------------------------|:--------------|:------------------|
@@ -472,7 +472,7 @@ We made the following three types of profiles available for cell-painting modali
 
 
 
-### Available functional annotation for each dataset:
+#### Available functional annotation for each dataset:
 
 | Dataset  | Functional Annotations                                                | Corresponding Metadata Column                                              |
 | -------  | ---------------------------------------------------------- | -------------------------------------------------------- |
@@ -486,7 +486,7 @@ We made the following three types of profiles available for cell-painting modali
 
 
 
-### Number of features for each dataset:
+#### Number of features for each dataset:
 
 | Dataset  | GE                                                | CP<br/>`normalized`       | CP<br/>`normalized_variable_selected`  |
 | -------  | ------------------------------------------------- | ------------------------- | -------------------------------------- |
