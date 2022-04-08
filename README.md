@@ -440,7 +440,8 @@ aws s3api list-objects --bucket cellpainting-gallery --prefix rosetta/broad/work
  </details>
  
 
-### CP-L1000 Profile descriptions:
+### CP-L1000 Profile descriptions
+
 We gathered four available data sets that had both Cell Painting morphological (CP) and L1000 gene expression (GE) profiles, preprocessed the data from different sources and in different formats in a unified .csv format, and made the data publicly available. Single cell morphological (CP) profiles were created using CellProfiler software and processed to form aggregated replicate and treatment levels using the R cytominer package [cytominer](https://github.com/cytomining/cytominer/blob/master/vignettes/cytominer-pipeline.Rmd). 
 We made the following three types of profiles available for cell-painting modality of each of four datasets:
 
@@ -454,9 +455,9 @@ We made the following three types of profiles available for cell-painting modali
 
 
 
+### Metadata information
 
-
-### Keywords to match tables across modalities for each dataset:
+#### Keywords to match tables across modalities for each dataset:
 
 | Dataset                  |  perturbation match column<br/>CP  | perturbation match column<br/>GE   | Control perturbation  <br/>CP| Control perturbation<br/>GE|
 |:----------------------|:-----------------|:-----------------------------|:--------------|:------------------|
@@ -471,7 +472,7 @@ We made the following three types of profiles available for cell-painting modali
 
 
 
-### Available functional annotation for each dataset:
+#### Available functional annotation for each dataset:
 
 | Dataset  | Functional Annotations                                                | Corresponding Metadata Column                                              |
 | -------  | ---------------------------------------------------------- | -------------------------------------------------------- |
@@ -485,7 +486,7 @@ We made the following three types of profiles available for cell-painting modali
 
 
 
-### Number of features for each dataset:
+#### Number of features for each dataset:
 
 | Dataset  | GE                                                | CP<br/>`normalized`       | CP<br/>`normalized_variable_selected`  |
 | -------  | ------------------------------------------------- | ------------------------- | -------------------------------------- |
