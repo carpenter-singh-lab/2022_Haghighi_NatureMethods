@@ -469,9 +469,6 @@ We made the following three types of profiles available for cell-painting modali
 
 
 
-
-
-
 #### Available functional annotation for each dataset:
 
 | Dataset  | Functional Annotations                                                | Corresponding Metadata Column                                              |
@@ -483,9 +480,6 @@ We made the following three types of profiles available for cell-painting modali
 |LINCS|   MoA    | `Metadata_moa` |      
 
 
-
-
-
 #### Number of features for each dataset:
 
 | Dataset  | GE                                                | CP<br/>`normalized`       | CP<br/>`normalized_variable_selected`  |
@@ -495,10 +489,6 @@ We made the following three types of profiles available for cell-painting modali
 |LUAD      |               978                                 |      1569                 |              291                       |
 |TA-ORF    |               978                                 |      1677                 |               63                       |
 |LINCS     |               978                                 |      1670                 |               119                      | 
-
-
-<!-- # Running the analysis script notebooks -->
-
 
 
 # Lookup table for L1000 genes predictability:
