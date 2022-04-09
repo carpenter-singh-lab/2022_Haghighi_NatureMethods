@@ -133,3 +133,4 @@ dmypy.json
 .Rhistory
 .Rprofile
 *.nb.html
+metadata/output/cp_metadata.parquet
