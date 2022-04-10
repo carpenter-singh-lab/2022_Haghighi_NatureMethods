@@ -7,7 +7,7 @@ The patterns observed in this data can be used for more than a dozen application
  [Link to Paper](https://www.biorxiv.org/content/10.1101/2021.09.08.459417v1)
 
 
-# Data Modalities:
+# Data Modalities
 <details>
 <summary>Click to expand</summary>
 
@@ -31,7 +31,7 @@ In our study, we used treatment-level profiles in all experiments but have provi
 
 </details>
 
-# Datasets:
+# Datasets
 
 - We have gathered the following five available data sets that had both Cell Painting morphological (CP) and L1000 gene expression (GE) profiles, preprocessed the data from different sources and in different formats in a unified .csv format.
 
@@ -41,7 +41,7 @@ In our study, we used treatment-level profiles in all experiments but have provi
     - TA-ORF-BBBC037-Rohban-CP-GE (Cell line: U2OS)
     - LINCS-Pilot1-CP-GE (Cell line: A549)
 
-## References to raw profiles and images:
+## References to raw profiles and images
 <details>
 <summary>Click to expand</summary>
 
@@ -54,7 +54,7 @@ In our study, we used treatment-level profiles in all experiments but have provi
 </details>
 
 
-## Preprocessed publicly available Profiles
+## Preprocessed publicly available profiles
 Preprocessed profiles (~9.5GB) are available on a S3 bucket.
 They can be downloaded at no cost and no need for registration of any sort, using the command:
 
@@ -94,7 +94,7 @@ We made the following three types of profiles available for cell-painting modali
 
 ### Metadata information
 
-#### Keywords to match tables across modalities for each dataset:
+#### Keywords to match tables across modalities for each dataset
 
 | Dataset               | perturbation match column<br/>CP | perturbation match column<br/>GE | Control perturbation  <br/>CP | Control perturbation<br/>GE |
 | :-------------------- | :------------------------------- | :------------------------------- | :---------------------------- | :-------------------------- |
@@ -106,20 +106,12 @@ We made the following three types of profiles available for cell-painting modali
 
 
 
-#### Available functional annotation for each dataset:
+#### Available functional annotation for each dataset
 
 TODO
 
-| Dataset  | Functional Annotations | Corresponding Metadata Column    |
-| -------- | ---------------------- | -------------------------------- |
-| CDRP     | MoA                    | `Metadata_moa`,`Metadata_target` |
-| CDRP-BIO | MoA                    | `Metadata_moa`,`Metadata_target` |
-| LUAD     |                        |                                  |
-| TA-ORF   |                        |                                  |
-| LINCS    | MoA                    | `Metadata_moa`                   |
 
-
-#### Number of features for each dataset:
+#### Number of features for each dataset
 
 | Dataset  | GE  | CP<br/>`normalized` | CP<br/>`normalized_variable_selected` |
 | -------- | --- | ------------------- | ------------------------------------- |
@@ -130,7 +122,7 @@ TODO
 | LINCS    | 978 | 1670                | 119                                   |
 
 
-# Lookup table for L1000 genes predictability:
+# Lookup table for L1000 genes predictability
 
 [Table](results/SingleGenePred/Appendix_D.csv)
 
