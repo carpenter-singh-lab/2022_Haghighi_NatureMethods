@@ -132,7 +132,7 @@ We made the following three types of profiles available for cell-painting modali
 <details>
 <summary>Click to expand</summary>
 
-[Table](https://github.com/carpenterlab/2021_Haghighi_submitted/blob/main/results/SingleGenePred/Appendix_D.csv)
+[Table](results/SingleGenePred/Appendix_D.csv)
 
 </details>
 
