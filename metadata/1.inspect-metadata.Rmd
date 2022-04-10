@@ -35,7 +35,8 @@ get_metadata <- function(pattern_feature_column, pattern_filename) {
 
 ```{r}
 skim_metadata <- function(metadata) {
-  metadata %>%
+  s1 <- 
+    metadata %>%
     group_by(Metadata_dataset) %>%
     skimr::skim() %>%
     arrange(Metadata_dataset) %>%
@@ -44,7 +45,25 @@ skim_metadata <- function(metadata) {
     summarise(n_datasets = n(),
               datasets = paste0(Metadata_dataset, collapse = ","))  %>%
     arrange(desc(n_datasets), datasets) %>%
-    mutate(desc = "", .before = "datasets")
+    mutate(desc = "", .before = "datasets") %>%
+    ungroup()
+  
+  s2 <-
+    metadata %>%
+    pivot_longer(everything(), names_to = "skim_variable") %>%
+    distinct(skim_variable, value) %>%
+    slice_sample(prop = 1) %>%
+    group_by(skim_variable) %>%
+    summarise(sample_values =
+                paste0(sort(sample(value, min(length(
+                  value
+                ), 10))),
+                collapse = ","),
+              n_values = length(value)) %>%
+    arrange(skim_variable) %>%
+    ungroup()
+  
+  inner_join(s1, s2, by = "skim_variable")
 }
 ```
 
@@ -93,7 +112,6 @@ skim_metadata_cp <- skim_metadata(metadata_cp)
 
 skim_metadata_l1k <- skim_metadata(metadata_l1k)
 ```
-
 
 ```{r}
 skim_metadata_cp %>%
