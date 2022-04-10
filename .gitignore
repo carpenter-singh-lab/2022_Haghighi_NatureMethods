@@ -134,3 +134,4 @@ dmypy.json
 .Rprofile
 *.nb.html
 metadata/output/cp_metadata.parquet
+test.ipynb
