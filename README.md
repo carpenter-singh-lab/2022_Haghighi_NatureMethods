@@ -70,7 +70,7 @@ See this [wiki](https://github.com/carpenterlab/2016_bray_natprot/wiki/What-do-C
 
 ### Data version
 
-The [Etags](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Object.html) of these files are listed [here](etag.md).
+The [Etags](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Object.html) of these files are listed [here](etag.json).
 
 They were generated using:
 
