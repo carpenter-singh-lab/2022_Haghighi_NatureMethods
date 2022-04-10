@@ -8,10 +8,10 @@ library(tidyverse)
 ```
 
 ```{r}
-metadata <-
+get_metadata <- function(pattern_feature_column, pattern_filename) {
   list.files(
-    "../../preprocessed_data",
-    pattern = "replicate_level_cp_normalized_variable_selected.csv.gz",
+    "../../../rosetta/broad/workspace/preprocessed_data/",
+    pattern = pattern_filename,
     recursive = TRUE,
     full.names = TRUE
   ) %>%
@@ -21,24 +21,85 @@ metadata <-
               ))) %>%
                 tools::file_path_sans_ext())) %>%
   map_df(function(filename) {
-    message(filename)
     read_csv(
       filename,
-      col_select = !matches("Cells_|Cytoplasm_|Nuclei_"),
+      col_select = !matches(pattern_feature_column),
       col_types = cols(.default = col_character())
     )
-  }, .id = "Metadata_dataset") 
+  }, .id = "Metadata_dataset")   
+}
+
 ```
 
 
-```{r}
-metadata %>% arrow::write_parquet("output/cp_metadata.parquet")
-```
 
 ```{r}
-metadata_summary <- 
+skim_metadata <- function(metadata) {
   metadata %>%
-  group_by(Metadata_dataset) %>%
-  skimr::skim()
+    group_by(Metadata_dataset) %>%
+    skimr::skim() %>%
+    arrange(Metadata_dataset) %>%
+    filter(between(complete_rate, 0.05, 1)) %>%
+    group_by(skim_variable) %>%
+    summarise(n_datasets = n(),
+              datasets = paste0(Metadata_dataset, collapse = ","))  %>%
+    arrange(desc(n_datasets), datasets) %>%
+    mutate(desc = "", .before = "datasets")
+}
+```
+
+
+
+```{r eval=FALSE}
+# cp
+pattern_feature_column <- "Cells_|Cytoplasm_|Nuclei_"
+
+pattern_filename <-
+  "replicate_level_cp_normalized_variable_selected.csv.gz"
+
+metadata_cp <-
+  get_metadata(pattern_feature_column = pattern_feature_column,
+               pattern_filename = pattern_filename)
+
+metadata_cp %>% 
+  arrow::write_parquet("output/metadata_cp.parquet")
+
+# l1k
+pattern_feature_column <- "_at"
+
+pattern_filename <-
+  "replicate_level_l1k.csv.gz"
+
+metadata_l1k <-
+  get_metadata(pattern_feature_column = pattern_feature_column,
+               pattern_filename = pattern_filename)
+
+metadata_l1k %>% 
+  arrow::write_parquet("output/metadata_l1k.parquet")
+```
+
+
+```{r}
+metadata_cp <- 
+  arrow::read_parquet("output/metadata_cp.parquet")
+
+metadata_l1k <- 
+  arrow::read_parquet("output/metadata_l1k.parquet")
+```
+
+
+```{r}
+skim_metadata_cp <- skim_metadata(metadata_cp)
+
+skim_metadata_l1k <- skim_metadata(metadata_l1k)
+```
+
+
+```{r}
+skim_metadata_cp %>%
+  write_csv("output/skim_metadata_cp.csv")
+
+skim_metadata_l1k %>%
+  write_csv("output/skim_metadata_l1k.csv")
 ```
 
