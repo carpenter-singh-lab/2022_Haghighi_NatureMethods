@@ -70,8 +70,13 @@ See this [wiki](https://github.com/carpenterlab/2016_bray_natprot/wiki/What-do-C
 
 ### Data version
 
-The [Etags](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Object.html) of these files are listed [here](etag.md)
+The [Etags](https://docs.aws.amazon.com/AmazonS3/latest/API/API_Object.html) of these files are listed [here](etag.md).
 
+They were generated using:
+
+```sh
+aws s3api list-objects --bucket cellpainting-gallery --prefix rosetta/broad/workspace/preprocessed_data/
+```
 ### CP-L1000 Profile descriptions
 
 We gathered four available data sets that had both Cell Painting morphological (CP) and L1000 gene expression (GE) profiles, preprocessed the data from different sources and in different formats in a unified .csv format, and made the data publicly available. Single cell morphological (CP) profiles were created using CellProfiler software and processed to form aggregated replicate and treatment levels using the R cytominer package [cytominer](https://github.com/cytomining/cytominer/blob/master/vignettes/cytominer-pipeline.Rmd).
