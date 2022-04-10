@@ -21,9 +21,10 @@ metadata <-
               ))) %>%
                 tools::file_path_sans_ext())) %>%
   map_df(function(filename) {
+    message(filename)
     read_csv(
       filename,
-      col_select = matches("Metadata"),
+      col_select = !matches("Cells_|Cytoplasm_|Nuclei_"),
       col_types = cols(.default = col_character())
     )
   }, .id = "Metadata_dataset") 
