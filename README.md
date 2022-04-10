@@ -129,13 +129,10 @@ We made the following three types of profiles available for cell-painting modali
 
 
 # Lookup table for L1000 genes predictability:
-<details>
-<summary>Click to expand</summary>
 
 [Table](results/SingleGenePred/Appendix_D.csv)
 
-</details>
-
 
 # License
+
 We license the data, results, and figures as [CC0 1.0](LICENSE_CC0.md) and the source code as BSD 3-Clause.
