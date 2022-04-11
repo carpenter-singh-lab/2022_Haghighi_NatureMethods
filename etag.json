@@ -1,0 +1,367 @@
+{
+    "Contents": [
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/CDRP-BBBC047-Bray/CellPainting/replicate_level_cp_augmented.csv.gz",
+            "LastModified": "2022-02-25T20:24:06.000Z",
+            "ETag": "\"8367b77b245035279d21e083fb57564e-261\"",
+            "Size": 2183033139,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/CDRP-BBBC047-Bray/CellPainting/replicate_level_cp_normalized.csv.gz",
+            "LastModified": "2022-02-25T20:24:06.000Z",
+            "ETag": "\"572869293e0cfacdd8882c2b758fac00-272\"",
+            "Size": 2277911750,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/CDRP-BBBC047-Bray/CellPainting/replicate_level_cp_normalized_variable_selected.csv.gz",
+            "LastModified": "2022-02-25T20:24:06.000Z",
+            "ETag": "\"510f9c5a93436c8af2f36f0308c78be0-131\"",
+            "Size": 1098352960,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/CDRP-BBBC047-Bray/L1000/replicate_level_l1k.csv.gz",
+            "LastModified": "2022-02-25T20:24:06.000Z",
+            "ETag": "\"40e1f7285238c5381b9d9fdeebb5a026-32\"",
+            "Size": 262406281,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/CDRP-BBBC047-Bray/L1000/replicate_level_l1k_pclfc.csv.gz",
+            "LastModified": "2022-02-25T20:24:06.000Z",
+            "ETag": "\"630b98d69d185f530acfb0c272e82031-31\"",
+            "Size": 258651159,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/CDRP-BBBC047-Bray/L1000/replicate_level_l1k_pczscore.csv.gz",
+            "LastModified": "2022-02-25T20:24:13.000Z",
+            "ETag": "\"5ad1f4b412c8ea9b9abb55a254a7ebbe-72\"",
+            "Size": 603440498,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/CDRP-BBBC047-Bray/L1000/replicate_level_l1k_vczscore.csv.gz",
+            "LastModified": "2022-02-25T20:24:13.000Z",
+            "ETag": "\"b58b4d31e96964f28165f048bdfd60c8-73\"",
+            "Size": 605293966,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/CDRP-BBBC047-Bray/L1000/treatment_level_l1k.csv.gz",
+            "LastModified": "2022-02-25T20:24:27.000Z",
+            "ETag": "\"e695e3d5f520553f516516ab8719719f-13\"",
+            "Size": 107934871,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/CDRPBIO-BBBC036-Bray/CellPainting/replicate_level_cp_augmented.csv.gz",
+            "LastModified": "2022-02-25T20:24:27.000Z",
+            "ETag": "\"3e199aeba5209250e0d2c5948f5bd522-36\"",
+            "Size": 298941736,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/CDRPBIO-BBBC036-Bray/CellPainting/replicate_level_cp_normalized.csv.gz",
+            "LastModified": "2022-02-25T20:24:30.000Z",
+            "ETag": "\"0b86065f8840aff626d64c6f52a8caf4-38\"",
+            "Size": 311539701,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/CDRPBIO-BBBC036-Bray/CellPainting/replicate_level_cp_normalized_variable_selected.csv.gz",
+            "LastModified": "2022-02-25T20:24:32.000Z",
+            "ETag": "\"bffd9db9578fcc70bbd7d72e0dfff773-14\"",
+            "Size": 117242590,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/CDRPBIO-BBBC036-Bray/L1000/replicate_level_l1k.csv.gz",
+            "LastModified": "2022-02-25T20:24:35.000Z",
+            "ETag": "\"5b45e5cb94f0466a2abb11fbac8a655e-4\"",
+            "Size": 26842289,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LINCS-Pilot1/CellPainting/replicate_level_cp_augmented.csv.gz",
+            "LastModified": "2022-02-25T20:24:35.000Z",
+            "ETag": "\"9bde4d7112c06ffa1849fbfa4efa22f1-36\"",
+            "Size": 296762474,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LINCS-Pilot1/CellPainting/replicate_level_cp_normalized.csv.gz",
+            "LastModified": "2022-02-25T20:24:36.000Z",
+            "ETag": "\"f42af6b4109ef9ed110004def49f6c2c-36\"",
+            "Size": 299683743,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LINCS-Pilot1/CellPainting/replicate_level_cp_normalized_variable_selected.csv.gz",
+            "LastModified": "2022-02-25T20:24:38.000Z",
+            "ETag": "\"33783625dc59b0de2bf16c299f5380dd-12\"",
+            "Size": 94527797,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LINCS-Pilot1/L1000/level_3.csv.gz",
+            "LastModified": "2022-02-25T20:24:41.000Z",
+            "ETag": "\"8491fe32e9b0b040f10c7d51225d6111-11\"",
+            "Size": 89725093,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LINCS-Pilot1/L1000/level_4.csv.gz",
+            "LastModified": "2022-02-25T20:24:42.000Z",
+            "ETag": "\"14679d4b4cae5e12a4e7be8255bd22ff-10\"",
+            "Size": 78596325,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LINCS-Pilot1/L1000/level_4W.csv.gz",
+            "LastModified": "2022-02-25T20:24:43.000Z",
+            "ETag": "\"370607c1f148942263037a7e26018303-17\"",
+            "Size": 140912507,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LINCS-Pilot1/L1000/level_5_modz.csv.gz",
+            "LastModified": "2022-02-25T20:24:43.000Z",
+            "ETag": "\"5967bd8a92d2c57242436330950f1cd2\"",
+            "Size": 3631,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LINCS-Pilot1/L1000/level_5_rank.csv.gz",
+            "LastModified": "2022-02-25T20:24:43.000Z",
+            "ETag": "\"83c8146ea2f8a2a6392643b3c4472727\"",
+            "Size": 3631,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LINCS-Pilot1/L1000/replicate_level_l1k.csv.gz",
+            "LastModified": "2022-02-25T20:24:44.000Z",
+            "ETag": "\"872c318560ba21c9d36e805fb97992a4-10\"",
+            "Size": 78596337,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LUAD-BBBC041-Caicedo/CellPainting/replicate_level_cp_augmented.csv.gz",
+            "LastModified": "2022-02-25T20:24:44.000Z",
+            "ETag": "\"11a0a26d299f09452455e0c7e44c571c-11\"",
+            "Size": 85105940,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LUAD-BBBC041-Caicedo/CellPainting/replicate_level_cp_normalized.csv.gz",
+            "LastModified": "2022-02-25T20:24:46.000Z",
+            "ETag": "\"f91d40a978c96834973f24b96b8a3b02-11\"",
+            "Size": 88273100,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LUAD-BBBC041-Caicedo/CellPainting/replicate_level_cp_normalized_variable_selected.csv.gz",
+            "LastModified": "2022-02-25T20:24:47.000Z",
+            "ETag": "\"1ba6936ab1188268850a798e30c4823f-2\"",
+            "Size": 16570136,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LUAD-BBBC041-Caicedo/L1000/replicate_level_l1k.csv.gz",
+            "LastModified": "2022-02-25T20:24:47.000Z",
+            "ETag": "\"c1b8cabef1934d213baf797b80c4c32c-2\"",
+            "Size": 11448027,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LUAD-BBBC041-Caicedo/L1000/replicate_level_l1k_Juan.csv.gz",
+            "LastModified": "2022-02-25T20:24:47.000Z",
+            "ETag": "\"587d00f75c5fa6164929e3592bf96080-4\"",
+            "Size": 25582111,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/LUAD-BBBC041-Caicedo/L1000/treatment_level_l1k.csv.gz",
+            "LastModified": "2022-02-25T20:24:48.000Z",
+            "ETag": "\"c7f285af2a39efc64a4c8d57854d6a0e\"",
+            "Size": 4575373,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/TA-ORF-BBBC037-Rohban/CellPainting/replicate_level_cp_augmented.csv.gz",
+            "LastModified": "2022-02-25T20:24:48.000Z",
+            "ETag": "\"9707bd02924cda850ed6f1e7eba33d9a-4\"",
+            "Size": 27548449,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/TA-ORF-BBBC037-Rohban/CellPainting/replicate_level_cp_normalized.csv.gz",
+            "LastModified": "2022-02-25T20:24:48.000Z",
+            "ETag": "\"736ef2b85bf5406f27239153f3772218-4\"",
+            "Size": 27482072,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/TA-ORF-BBBC037-Rohban/CellPainting/replicate_level_cp_normalized_variable_selected.csv.gz",
+            "LastModified": "2022-02-25T20:24:48.000Z",
+            "ETag": "\"1315c2fd175b265d10e929e51d9dfef0\"",
+            "Size": 1106334,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/TA-ORF-BBBC037-Rohban/L1000/replicate_level_l1k.csv.gz",
+            "LastModified": "2022-02-25T20:24:49.000Z",
+            "ETag": "\"1e643bb1182555a8e7699230a0ea98d1\"",
+            "Size": 2022367,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/TA-ORF-BBBC037-Rohban/L1000/replicate_level_l1k_QNORM.csv.gz",
+            "LastModified": "2022-02-25T20:24:49.000Z",
+            "ETag": "\"8ffb9c82772442cbbd138a6ab05a9a97\"",
+            "Size": 1782302,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        },
+        {
+            "Key": "rosetta/broad/workspace/preprocessed_data/TA-ORF-BBBC037-Rohban/L1000/replicate_level_l1k_ZSPCQNORM.csv.gz",
+            "LastModified": "2022-02-25T20:24:49.000Z",
+            "ETag": "\"36783d73bb48bec466aeda707384c7e5\"",
+            "Size": 1997953,
+            "StorageClass": "STANDARD",
+            "Owner": {
+                "DisplayName": "cellpainting",
+                "ID": "b2ff2dec476b541160cb5edae0ba12ffb6f3cd979ce9352e9ca765d92ac2170c"
+            }
+        }
+    ]
+}
