@@ -67,7 +67,34 @@ skim_metadata <- function(metadata) {
 }
 ```
 
-
+```{r}
+skim_metadata_per_dataset <- function(metadata) {
+  s1 <- 
+    metadata %>%
+    group_by(Metadata_dataset) %>%
+    skimr::skim() %>%
+    arrange(Metadata_dataset) %>%
+    filter(between(complete_rate, 0.05, 1))
+  
+  s2 <-
+    metadata %>%
+    pivot_longer(-Metadata_dataset, names_to = "skim_variable") %>%
+    distinct(Metadata_dataset, skim_variable, value) %>%
+    slice_sample(prop = 1) %>% # shuffle
+    group_by(Metadata_dataset, skim_variable) %>%
+    summarise(sample_values =
+                paste0(sort(sample(value, min(length(
+                  value
+                ), 10))),
+                collapse = ","),
+              n_values = length(value),
+              .groups = "keep") %>%
+    arrange(Metadata_dataset, skim_variable) %>%
+    ungroup()
+  
+  inner_join(s1, s2, by = c("Metadata_dataset", "skim_variable"))
+}
+```
 
 ```{r eval=FALSE}
 # cp
@@ -121,3 +148,16 @@ skim_metadata_l1k %>%
   write_csv("output/skim_metadata_l1k.csv")
 ```
 
+```{r}
+skim_metadata_per_dataset_cp <- skim_metadata_per_dataset(metadata_cp)
+
+skim_metadata_per_dataset_l1k <- skim_metadata_per_dataset(metadata_l1k)
+```
+
+```{r}
+skim_metadata_per_dataset_cp %>%
+  write_csv("output/skim_metadata_per_dataset_cp.csv")
+
+skim_metadata_per_dataset_l1k %>%
+  write_csv("output/skim_metadata_per_dataset_l1k.csv")
+```
