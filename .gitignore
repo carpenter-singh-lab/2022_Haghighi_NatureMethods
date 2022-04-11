@@ -133,5 +133,6 @@ dmypy.json
 .Rhistory
 .Rprofile
 *.nb.html
-metadata/output/cp_metadata.parquet
+metadata/output/metadata_cp.parquet
+metadata/output/metadata_l1k.parquet
 test.ipynb
