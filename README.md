@@ -61,7 +61,7 @@ They can be downloaded at no cost and no need for registration of any sort, usin
 ```bash
 aws s3 sync \
   --no-sign-request \
-  s3://cellpainting-gallery/rosetta/broad/workspace/preprocessed_data .
+  s3://cellpainting-gallery/cpg0003-rosetta/broad/workspace/preprocessed_data .
 ```
 
 See this [wiki](https://github.com/carpenterlab/2016_bray_natprot/wiki/What-do-Cell-Painting-features-mean%3F) for sample Cell Painting images and the meaning of ([CellProfiler](https://cellprofiler.org/)-derived) Cell Painting features.
