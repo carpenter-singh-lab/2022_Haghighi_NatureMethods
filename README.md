@@ -98,15 +98,18 @@ This [spreadsheet](https://docs.google.com/spreadsheets/d/1EpqBLJqio8ptGlZe9Ywq1
 
 #### Keywords to match tables across modalities for each dataset
 
-TODO:  Clarify which column should be used to filter for the "Control perturbation" listed in the table below
 
-| Dataset               | perturbation match column<br/>CP | perturbation match column<br/>GE | Control perturbation  <br/>CP | Control perturbation<br/>GE |
-| :-------------------- | :------------------------------- | :------------------------------- | :---------------------------- | :-------------------------- |
-| CDRP-BBBC047-Bray     | Metadata_Sample_Dose             | pert_sample_dose                 | DMSO                          | DMSO                        |
-| CDRPBIO-BBBC036-Bray  | Metadata_Sample_Dose             | pert_sample_dose                 | DMSO                          | DMSO                        |
-| TA-ORF-BBBC037-Rohban | Metadata_broad_sample            | pert_id                          | DMSO                          | DMSO                        |
-| LUAD-BBBC041-Caicedo  | x_mutation_status                | allele                           | DMSO_0.04                     | DMSO_-666                   |
-| LINCS-Pilot1          | Metadata_pert_id_dose            | pert_id_dose                     | DMSO                          | DMSO                        |
+| Dataset               | perturbation match column<br/>CP | perturbation match column<br/>GE | Control perturbation value in each of columns <br/>CP and GE | 
+| :-------------------- | :------------------------------- | :------------------------------- | :---------------------------- | 
+| CDRP-BBBC047-Bray     | Metadata_Sample_Dose             | pert_sample_dose                 | negcon                          |
+| CDRPBIO-BBBC036-Bray  | Metadata_Sample_Dose             | pert_sample_dose                 | negcon                          |
+| TA-ORF-BBBC037-Rohban | Metadata_broad_sample            | pert_id                          | negcon                          |
+| LUAD-BBBC041-Caicedo  | x_mutation_status                | allele                           | negcon                   |
+| LINCS-Pilot1          | Metadata_pert_id_dose            | pert_id_dose                     | negcon                          | 
+
+* Two aditional columns can also be used to filter for the "Control perturbation" in each data table:
+   -  **pert_type** wich can take 'trt' or 'control' values , and column control_type indicates negcon (otherwise empty).
+   -  **control_type** wich can take 'negcon' (for control) or NaN (for treatments) values
 
 #### Number of features for each dataset
 
@@ -114,7 +117,7 @@ TODO: Fix CDRP
 
 | Dataset  | GE  | CP<br/>`normalized` | CP<br/>`normalized_variable_selected` |
 | -------- | --- | ------------------- | ------------------------------------- |
-| CDRP     | 977 | x                   |                                       |
+| CDRP     | 977 | 1565                | 601                                   |
 | CDRP-BIO | 977 | 1570                | 601                                   |
 | LUAD     | 978 | 1569                | 291                                   |
 | TA-ORF   | 978 | 1677                | 63                                    |
