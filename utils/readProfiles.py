@@ -161,13 +161,13 @@ def read_treatment_level_profiles(dataset_rootDir,dataset,profileType,filter_per
 
     ###### remove perts with low rep corr
     if filter_perts=='highRepOverlap':    
-        highRepPerts = highRepFinder(dataset,'intersection') + ['DMSO'];
+        highRepPerts = highRepFinder(dataset,'intersection') + ['negcon'];
         
         cp_data_repLevel=cp_data_repLevel[cp_data_repLevel['PERT'].isin(highRepPerts)].reset_index()
         l1k_data_repLevel=l1k_data_repLevel[l1k_data_repLevel['PERT'].isin(highRepPerts)].reset_index()  
         
     elif filter_perts=='highRepUnion':
-        highRepPerts = highRepFinder(dataset,'union') + ['DMSO'];
+        highRepPerts = highRepFinder(dataset,'union') + ['negcon'];
         
         cp_data_repLevel=cp_data_repLevel[cp_data_repLevel['PERT'].isin(highRepPerts)].reset_index()
         l1k_data_repLevel=l1k_data_repLevel[l1k_data_repLevel['PERT'].isin(highRepPerts)].reset_index()      
@@ -347,13 +347,13 @@ def read_paired_replicate_level_profiles(dataset_rootDir,dataset,profileType,nRe
 
     ###### remove perts with low rep corr
     if filter_perts=='highRepOverlap':    
-        highRepPerts = highRepFinder(dataset,'intersection') + ['DMSO'];
+        highRepPerts = highRepFinder(dataset,'intersection') + ['negcon'];
         
         cp_data_repLevel=cp_data_repLevel[cp_data_repLevel['PERT'].isin(highRepPerts)].reset_index()
         l1k_data_repLevel=l1k_data_repLevel[l1k_data_repLevel['PERT'].isin(highRepPerts)].reset_index()  
         
     elif filter_perts=='highRepUnion':
-        highRepPerts = highRepFinder(dataset,'union') + ['DMSO'];
+        highRepPerts = highRepFinder(dataset,'union') + ['negcon'];
         
         cp_data_repLevel=cp_data_repLevel[cp_data_repLevel['PERT'].isin(highRepPerts)].reset_index()
         l1k_data_repLevel=l1k_data_repLevel[l1k_data_repLevel['PERT'].isin(highRepPerts)].reset_index()      

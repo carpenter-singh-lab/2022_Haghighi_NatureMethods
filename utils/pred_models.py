@@ -53,7 +53,7 @@ def lasso_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
     alphas=np.concatenate((alphas1,alphas2))
 #     alphas = np.logspace(-4, -0.5, 30)
     lasso_cv = linear_model.LassoCV(alphas=alphas, random_state=0, max_iter=1000,selection='random')
-    
+#     lasso_cv = linear_model.LassoLarsCV(cv=5)
     X,y=X0.values,y0.values
     
 #     scores=np.zeros(k,)
@@ -215,6 +215,65 @@ def MLP_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
     
     # Perform k-fold cross validation on the shuffled vector of lm GE across samples
     # y.sample(frac = 1) this just shuffles the vector
+#     scores_rand=0
+
+    if rand_added_flag:
+        scores_rand = cross_val_score(mlp_gs, X, y0.sample(frac = 1) ,groups=group_labels,cv=split_obj,n_jobs=n_j)
+    else:
+        scores_rand =0    
+    return scores, scores_rand
+
+
+def MLP_cv_plus_model_selection_taorf(X0,y0,k,group_labels,rand_added_flag):
+    from sklearn.neural_network import MLPRegressor
+
+    n_j=-1
+#     hidden_layer_sizes=100,
+#     hidden_layer_sizes = (50, 20, 10)
+#     regr = MLPRegressor(hidden_layer_sizes = (50,10),activation='logistic',\
+#                         alpha=0.01,early_stopping=True)
+
+    mlp_gs = MLPRegressor(random_state=0,max_iter=1000)
+
+    split_obj=GroupKFold(n_splits=k)    
+    # Perform k-fold cross validation
+#     scores = cross_val_score(regr, X, y, groups=group_labels,cv=split_obj,n_jobs=n_j)
+
+#     mlp_gs = MLPClassifier(max_iter=100)
+#     parameter_space = {
+#         'hidden_layer_sizes': [(50,),(200,),(500,),(10,30,10),(50,10),(50,10,10)],
+#         'activation': ['tanh', 'relu','logistic'],
+#         'alpha': [0.0001, 0.05,0.01,0.1,0.2],
+#         'early_stopping':[True,False]
+#     }
+
+    parameter_space = {
+        'hidden_layer_sizes': [(50,),(10,30,10),(50,10),(50,10,10)],
+        'activation': ['tanh', 'relu','logistic'],
+        'alpha': [0.0001, 0.05,0.01,0.2],
+        'early_stopping':[True,False]
+    }
+    
+    from sklearn.model_selection import GridSearchCV
+    clf = GridSearchCV(mlp_gs, parameter_space, n_jobs=-1, cv=2)
+
+    X,y=X0.values,y0.values
+    
+    scores=[]
+    for train_index, test_index in split_obj.split(X, y, group_labels):
+#         print("TRAIN:", train_index, "TEST:", test_index)
+        X_train, X_test = X[train_index], X[test_index]
+        y_train, y_test = y[train_index], y[test_index]
+        
+#         lasso_cv.fit(X_train, y_train)  
+        clf.fit(X, y)
+        scores.append(clf.score(X_test, y_test))   
+#         print(clf.best_params_)
+
+    
+    # Perform k-fold cross validation on the shuffled vector of lm GE across samples
+    # y.sample(frac = 1) this just shuffles the vector
+    
 #     scores_rand=0
 
     if rand_added_flag:
