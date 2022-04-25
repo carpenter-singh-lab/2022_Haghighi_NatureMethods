@@ -1,0 +1,12 @@
+name: rosetta
+channels:
+  - conda-forge
+dependencies:
+  - pip=22.0.4
+  - conda-forge::pandas=1.4.1
+  - conda-forge::scikit-learn=1.0.2
+  - conda-forge::umap-learn=0.5.2
+  - conda-forge::jupyter=1.0.0
+  - conda-forge::matplotlib=3.3.3
+  - conda-forge::seaborn=0.11.2
+  - conda-forge::openpyxl=3.0.9
