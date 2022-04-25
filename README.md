@@ -113,11 +113,9 @@ This [spreadsheet](https://docs.google.com/spreadsheets/d/1EpqBLJqio8ptGlZe9Ywq1
 
 #### Number of features for each dataset
 
-TODO: Fix CDRP
-
 | Dataset  | GE  | CP<br/>`normalized` | CP<br/>`normalized_variable_selected` |
 | -------- | --- | ------------------- | ------------------------------------- |
-| CDRP     | 977 | 1565                | 601                                   |
+| CDRP     | 977 | 1565                | 727                                   |
 | CDRP-BIO | 977 | 1570                | 601                                   |
 | LUAD     | 978 | 1569                | 291                                   |
 | TA-ORF   | 978 | 1677                | 63                                    |
