@@ -121,7 +121,7 @@ def extract_metadata_column_names(cp_data, l1k_data):
     return cp_meta_col_names, l1k_meta_col_names
 
 ################################################################################
-def read_treatment_level_profiles(dataset_rootDir,dataset,profileType,filter_perts,per_plate_normalized_flag):
+def read_treatment_level_profiles(dataset_rootDir,dataset,profileType,filter_repCorr_params,per_plate_normalized_flag):
 
     """
     Reads replicate level CSV files (scaled replicate level profiles per plate)
@@ -142,6 +142,10 @@ def read_treatment_level_profiles(dataset_rootDir,dataset,profileType,filter_per
     each is a list of dataframe and feature names for each of modalities
     """
     
+    filter_perts=filter_repCorr_params[0]
+    repCorrFilePath=filter_repCorr_params[1]
+    
+    
     [cp_data_repLevel,cp_features], [l1k_data_repLevel,l1k_features] = read_replicate_level_profiles(dataset_rootDir,dataset,profileType,per_plate_normalized_flag);
         
 
@@ -161,13 +165,13 @@ def read_treatment_level_profiles(dataset_rootDir,dataset,profileType,filter_per
 
     ###### remove perts with low rep corr
     if filter_perts=='highRepOverlap':    
-        highRepPerts = highRepFinder(dataset,'intersection') + ['negcon'];
+        highRepPerts = highRepFinder(dataset,'intersection',repCorrFilePath) + ['negcon'];
         
         cp_data_repLevel=cp_data_repLevel[cp_data_repLevel['PERT'].isin(highRepPerts)].reset_index()
         l1k_data_repLevel=l1k_data_repLevel[l1k_data_repLevel['PERT'].isin(highRepPerts)].reset_index()  
         
     elif filter_perts=='highRepUnion':
-        highRepPerts = highRepFinder(dataset,'union') + ['negcon'];
+        highRepPerts = highRepFinder(dataset,'union',repCorrFilePath) + ['negcon'];
         
         cp_data_repLevel=cp_data_repLevel[cp_data_repLevel['PERT'].isin(highRepPerts)].reset_index()
         l1k_data_repLevel=l1k_data_repLevel[l1k_data_repLevel['PERT'].isin(highRepPerts)].reset_index()      
@@ -204,7 +208,7 @@ def read_treatment_level_profiles(dataset_rootDir,dataset,profileType,filter_per
 
 
 ################################################################################
-def read_paired_treatment_level_profiles(dataset_rootDir,dataset,profileType,filter_perts,per_plate_normalized_flag):
+def read_paired_treatment_level_profiles(dataset_rootDir,dataset,profileType,filter_repCorr_params,per_plate_normalized_flag):
 
     """
     Reads treatment level profiles
@@ -222,7 +226,7 @@ def read_paired_treatment_level_profiles(dataset_rootDir,dataset,profileType,fil
     """
     
     [cp_data_treatLevel,cp_features], [l1k_data_treatLevel,l1k_features]=\
-    read_treatment_level_profiles(dataset_rootDir,dataset,profileType,filter_perts,per_plate_normalized_flag)
+    read_treatment_level_profiles(dataset_rootDir,dataset,profileType,filter_repCorr_params,per_plate_normalized_flag)
     
 
     mergedProfiles_treatLevel=pd.merge(cp_data_treatLevel, l1k_data_treatLevel, how='inner',on=[labelCol])
@@ -268,7 +272,7 @@ def generate_random_match_of_replicate_pairs(cp_data_repLevel, l1k_data_repLevel
     return mergedProfiles_repLevel
 
 ################################################################################
-def highRepFinder(dataset,how):
+def highRepFinder(dataset,how,repCorrFilePath):
     """
     This function reads pre calculated and saved Replicate Correlation values file and filters perturbations
     using one of the following filters:
@@ -285,8 +289,7 @@ def highRepFinder(dataset,how):
     Output: list of high quality perurbations
     
     """
-
-    repCorDF=pd.read_excel('../results/RepCor/RepCorrDF.xlsx', sheet_name=None)
+    repCorDF=pd.read_excel(repCorrFilePath, sheet_name=None)
     cpRepDF=repCorDF['cp-'+dataset.lower()]
     cpHighList=cpRepDF[cpRepDF['RepCor']>cpRepDF['Rand90Perc']]['Unnamed: 0'].tolist()
     print('CP: from ',cpRepDF.shape[0],' to ',len(cpHighList))
@@ -304,11 +307,13 @@ def highRepFinder(dataset,how):
         print('l1k: from ',cpRepDF.shape[0],' to ',len(l1kHighList))
         print('CP and l1k high rep union: ',len(highRepPerts))        
         
+    
     return highRepPerts
 
 
 ################################################################################
-def read_paired_replicate_level_profiles(dataset_rootDir,dataset,profileType,nRep,filter_perts,per_plate_normalized_flag):
+def read_paired_replicate_level_profiles(dataset_rootDir,dataset,profileType,nRep,\
+                                         filter_repCorr_params,per_plate_normalized_flag):
 
     """
     Reads replicate level CSV files (scaled replicate level profiles per plate)
@@ -329,6 +334,9 @@ def read_paired_replicate_level_profiles(dataset_rootDir,dataset,profileType,nRe
     cp_features,l1k_features list of feature names for each of modalities
     """
     
+    filter_perts=filter_repCorr_params[0]
+    repCorrFilePath=filter_repCorr_params[1]
+    
     [cp_data_repLevel,cp_features], [l1k_data_repLevel,l1k_features] = read_replicate_level_profiles(dataset_rootDir,dataset,profileType,per_plate_normalized_flag);
         
 
@@ -347,13 +355,13 @@ def read_paired_replicate_level_profiles(dataset_rootDir,dataset,profileType,nRe
 
     ###### remove perts with low rep corr
     if filter_perts=='highRepOverlap':    
-        highRepPerts = highRepFinder(dataset,'intersection') + ['negcon'];
+        highRepPerts = highRepFinder(dataset,'intersection',repCorrFilePath) + ['negcon'];
         
         cp_data_repLevel=cp_data_repLevel[cp_data_repLevel['PERT'].isin(highRepPerts)].reset_index()
         l1k_data_repLevel=l1k_data_repLevel[l1k_data_repLevel['PERT'].isin(highRepPerts)].reset_index()  
         
     elif filter_perts=='highRepUnion':
-        highRepPerts = highRepFinder(dataset,'union') + ['negcon'];
+        highRepPerts = highRepFinder(dataset,'union',repCorrFilePath) + ['negcon'];
         
         cp_data_repLevel=cp_data_repLevel[cp_data_repLevel['PERT'].isin(highRepPerts)].reset_index()
         l1k_data_repLevel=l1k_data_repLevel[l1k_data_repLevel['PERT'].isin(highRepPerts)].reset_index()      
@@ -366,19 +374,37 @@ def read_paired_replicate_level_profiles(dataset_rootDir,dataset,profileType,nRe
 
 
 
-def rename_affyprobe_to_genename(l1k_data_df,l1k_features):
+def rename_affyprobe_to_genename(l1k_data_df,l1k_features,map_source_address):
     """
     map input dataframe column name from affy prob id to gene names
     
     """
-
-    meta=pd.read_csv("../affy_probe_gene_mapping.txt",delimiter="\t",header=None, names=["probe_id", "gene"])
+    meta=pd.read_excel(map_source_address)  
+    
+#     meta=pd.read_csv("../affy_probe_gene_mapping.txt",delimiter="\t",header=None, names=["probe_id", "gene"])
     meta_gene_probID=meta.set_index('probe_id')
-    d = dict(zip(meta_gene_probID.index, meta_gene_probID['gene']))
+    d = dict(zip(meta_gene_probID.index, meta_gene_probID['symbol']))
     l1k_features_gn=[d[l] for l in l1k_features]
     l1k_data_df = l1k_data_df.rename(columns=d)   
 
     return l1k_data_df,l1k_features_gn
 
 
+
+def rename_to_genename_list_to_affyprobe(l1k_features_gn,our_l1k_prob_list,map_source_address):
+    """
+    map a list of gene names to a list of affy prob ids
+    
+    """
+#     map_source_address='../idmap.xlsx'
+    meta=pd.read_excel(map_source_address) 
+#     meta=pd.read_csv("../affy_probe_gene_mapping.txt",delimiter="\t",header=None, names=["probe_id", "gene"])
+#     meta=meta[meta['probe_id'].isin(our_l1k_prob_list)].reset_index(drop=True)
+    meta_gene_probID=meta.set_index('symbol')
+    d = dict(zip(meta_gene_probID.index, meta_gene_probID['probe_id']))
+    l1k_features=[d[l] for l in l1k_features_gn]
+#     l1k_data_df = l1k_data_df.rename(columns=d)   
+
+
+    return l1k_features
  
