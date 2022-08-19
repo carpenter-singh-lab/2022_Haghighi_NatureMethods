@@ -6,6 +6,7 @@ from sklearn import preprocessing
 from warnings import simplefilter
 from sklearn.neural_network import MLPRegressor
 from sklearn.exceptions import ConvergenceWarning
+from sklearn.model_selection import train_test_split
 from sklearn.svm import SVR
 
 # simplefilter("ignore", category=ConvergenceWarning)
@@ -229,6 +230,54 @@ def MLP_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
     else:
         scores_rand =0    
     return scores, scores_rand
+
+
+def MLP_cv_plus_model_selection_keras(X0,y0,k,group_labels,rand_added_flag):
+    from keras.models import Sequential
+    from keras.layers import Dense, Conv1D, Flatten
+    from sklearn.metrics import mean_squared_error,r2_score
+    from keras.callbacks import EarlyStopping
+    from keras import backend as K
+    
+    X = X0.reshape(X0.shape[0], X0.shape[1], 1)
+    y=y0.values
+#     model.summary()
+    model = Sequential()
+    model.add(Dense(16,activation="relu", input_shape=(X0.shape[1],1)))
+#     model.add(Conv1D(32, 2, activation="relu", input_shape=(X0.shape[1],1)))
+    model.add(Flatten())
+    model.add(Dropout(0.6))
+    model.add(Dense(64, activation="relu"))
+    model.add(Dropout(0.2))
+    model.add(Dense(1))
+    model.compile(loss="mse", optimizer="adam")#,metrics=[coeff_determination])        
+#     model.compile(loss=coeff_determination, optimizer="adam")#,metrics=[coeff_determination])   
+
+    es = EarlyStopping(monitor='val_loss', mode='min', verbose=0, patience=10)
+    
+    Wsave = model.get_weights()
+
+    split_obj=GroupKFold(n_splits=k)    
+
+    scores=[]
+    for train_index, test_index in split_obj.split(X, y, group_labels):
+#         print("TRAIN:", train_index, "TEST:", test_index)
+        X_train, X_test = X[train_index], X[test_index]
+        y_train, y_test = y[train_index], y[test_index]
+        
+        XTraining, XValidation, YTraining, YValidation = train_test_split(X_train,y_train,test_size=0.1)
+
+        model.set_weights(Wsave)
+        model.fit(XTraining,YTraining, batch_size=XTraining.shape[0],epochs=1000,
+                  validation_data=(XValidation,YValidation),callbacks=[es],verbose=0)            
+        ypred = model.predict(X_test)
+        
+        scores.append(r2_score(y_test, ypred))
+
+    return scores, 0
+
+
+
 
 def SVR_cv_plus_model_selection(X0,y0,k,group_labels,rand_added_flag):
     
