@@ -4,8 +4,8 @@ import pandas as pd
 import sklearn.decomposition
 from sklearn import preprocessing
 from sklearn.metrics import pairwise_distances
-# from utils.normalize_funcs import standardize_per_catX
-from normalize_funcs import standardize_per_catX
+from utils.normalize_funcs import standardize_per_catX
+# from normalize_funcs import standardize_per_catX
 
 #'dataset_name',['folder_name',[cp_pert_col_name,l1k_pert_col_name],[cp_control_val,l1k_control_val]]
 ds_info_dict={'CDRP':['CDRP-BBBC047-Bray',['Metadata_Sample_Dose','pert_sample_dose']],
