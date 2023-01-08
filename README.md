@@ -14,17 +14,17 @@ The patterns observed in this data can be used for more than a dozen application
 ### Gene expression (GE) profiles
 Each cell has DNA in the nucleus which is transcribed into various mRNA molecules which are then translated into proteins that carry out functions in the cell.
 The levels of mRNA in the cell are often biologically meaningful - collectively, mRNA levels for a cell are known as its transcriptional state; each individual mRNA level is referred to as the corresponding gene's "expression".
-The L1000 assay \cite{subramanian2017next} was used to measure the transcriptional state of cells in the datasets here.
+The L1000 assay was used to measure the transcriptional state of cells in the datasets here.
 The assay reports a sample's mRNA levels for 978 genes at high-throughput, from the bulk population of cells treated with a given perturbation.
-These 978 "landmark" genes capture approximately 80\% of the transcriptional variance for the entire genome \cite{subramanian2017next}.
+These 978 "landmark" genes capture approximately $80\%$ of the transcriptional variance for the entire genome.
 The data processing tools and workflows to produce these profiles are available at https://clue.io/.
 
 
 ### Cell Painting morphological (CP) profiles
-We used the Cell Painting assay \cite{bray2016cell} to measure the morphological state of cells treated with a given perturbation.
+We used the Cell Painting assay to measure the morphological state of cells treated with a given perturbation.
 The assay captures fluorescence images of cells colored by six well-characterized fluorescent dyes to stain the nucleus, nucleoli, cytoplasmic RNA, endoplasmic reticulum, actin cytoskeleton, Golgi apparatus and plasma membrane.
 These eight labeled cell compartments are captured through five channels of high-resolution microscopy images (_DNA, RNA, ER, AGP_, and _Mito_).
-Images are then processed using [CellProfiler software](https://cellprofiler.org/) \cite{mcquin2018cellprofiler} to extract thousands of features of each cell’s morphology and form a high-dimensional profile for each single cell.
+Images are then processed using [CellProfiler software](https://cellprofiler.org/) to extract thousands of features of each cell’s morphology and form a high-dimensional profile for each single cell.
 These features are based on various shape, intensity and texture statistics and are then aggregated for all the single cells in a "well" (a miniature test tube) that are called replicate-level profiles of perturbations.
 Aggregation of replicate-level profiles across all the wells or replicates of a perturbation is called a treatment-level profile.
 In our study, we used treatment-level profiles in all experiments but have provided replicate-level profiles for researchers interested in further data exploration.
