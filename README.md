@@ -4,7 +4,7 @@ The patterns observed in this data can be used for more than a dozen application
  We provide a collection of four datasets where both gene expression and morphological data are available; roughly a thousand features are measured for each data type, across more than 28,000 thousand chemical and genetic perturbations.
  We have defined a set of biological problems that can be investigated using these two data modalities and provided baseline analysis and evaluation metrics for addressing each.
 
- [Link to Paper](https://www.biorxiv.org/content/10.1101/2021.09.08.459417v1)
+ [Link to Paper](https://www.nature.com/articles/s41592-022-01667-0)
 
 
 # Data Modalities
