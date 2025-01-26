@@ -361,7 +361,7 @@ for dataset_name, data_types in dataset_data.items():
     for data_type, data in data_types.items():
         markdown_output += f"### {data_type.upper()} Data\n\n"
         # Convert sample to markdown table
-        sample_df = data.sample(50)[
+        sample_df = data.sample(5)[
             [col for col in data.columns if col.startswith("Metadata")]
         ]
         markdown_output += sample_df.to_markdown(index=False) + "\n\n"
