@@ -99,13 +99,13 @@ This [spreadsheet](https://docs.google.com/spreadsheets/d/1EpqBLJqio8ptGlZe9Ywq1
 #### Keywords to match tables across modalities for each dataset
 
 
-| Dataset               | perturbation match column<br/>CP | perturbation match column<br/>GE | Control perturbation value in each of columns <br/>CP and GE | 
-| :-------------------- | :------------------------------- | :------------------------------- | :---------------------------- | 
+| Dataset               | perturbation match column<br/>CP | perturbation match column<br/>GE | Control perturbation value in each of columns <br/>CP and GE |
+| :-------------------- | :------------------------------- | :------------------------------- | :---------------------------- |
 | CDRP-BBBC047-Bray     | Metadata_Sample_Dose             | pert_sample_dose                 | negcon                          |
 | CDRPBIO-BBBC036-Bray  | Metadata_Sample_Dose             | pert_sample_dose                 | negcon                          |
 | TA-ORF-BBBC037-Rohban | Metadata_broad_sample            | pert_id                          | negcon                          |
 | LUAD-BBBC041-Caicedo  | x_mutation_status                | allele                           | negcon                   |
-| LINCS-Pilot1          | Metadata_pert_id_dose            | pert_id_dose                     | negcon                          | 
+| LINCS-Pilot1          | Metadata_pert_id_dose            | pert_id_dose                     | negcon                          |
 
 * Two aditional columns can also be used to filter for the "Control perturbation" in each data table:
    -  **pert_type** wich can take 'trt' or 'control' values , and column control_type indicates negcon (otherwise empty).
