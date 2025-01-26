@@ -1,9 +1,11 @@
 # Dataset Curation
 
+`curate_dataset.py` selects, renames, and fixes columns from the preprocessed data to create a curated dataset.
+
 ## Structure
 
 Available at:
-`s3://cellpainting-gallery/cpg0003-rosetta/broad/workspace/curated_ preprocessed_data`
+`s3://cellpainting-gallery/cpg0003-rosetta/broad/workspace/curated_preprocessed_data`
 
 ```
 curated_preprocessed_data
