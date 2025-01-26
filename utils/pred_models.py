@@ -27,7 +27,7 @@ def lasso_cv(X, y, k, group_labels):
 
     Returns:
         prediction scores, y permutated scores
-    """    
+    """
     from sklearn import linear_model
 
     n_j = 3
@@ -55,7 +55,7 @@ def lasso_cv_plus_model_selection(X0, y0, k, group_labels, rand_added_flag):
 
     Returns:
         prediction scores, y permutated scores
-    """    
+    """
     from sklearn import linear_model
 
     n_j = 3
@@ -108,7 +108,7 @@ def ridge_cv_plus_model_selection(X0, y0, k, group_labels, rand_added_flag):
 
     Returns:
         prediction scores, y permutated scores
-    """    
+    """
 
     from sklearn import linear_model
 
@@ -601,7 +601,7 @@ def linear_model_feature_ranking(X0, y0, k, group_labels, l1k_features_gn):
 
     Returns:
         prediction scores, y permutated scores
-    """    
+    """
     from sklearn import linear_model
     from sklearn.feature_selection import SelectKBest
     from sklearn.feature_selection import mutual_info_regression
